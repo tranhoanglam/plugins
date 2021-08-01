@@ -656,6 +656,13 @@ public class ImagePickerDelegate
   }
 
   private void useFrontCamera(Intent intent) {
+    intent.putExtra("com.google.assistant.extra.USE_FRONT_CAMERA", true);
+    intent.putExtra("android.intent.extra.USE_FRONT_CAMERA", true);
+    intent.putExtra("android.intent.extras.LENS_FACING_FRONT", 1);
+    intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+    intent.putExtra("camerafacing", "front");
+    intent.putExtra("previous_mode", "front");
+    intent.putExtra("default_camera", "1");
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
       intent.putExtra(
           "android.intent.extras.CAMERA_FACING", CameraCharacteristics.LENS_FACING_FRONT);
